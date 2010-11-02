@@ -1,0 +1,10 @@
+{
+  "name": "Modifies Epguides pages",
+  "version": "1.0",
+  "description": "Clipboard trial",
+  "content_scripts": [{	
+    "matches": ["http://*.epguides.com/*", "https://*.epguides.com/*"],
+    "js": ["jquery.js", "modify.js"]
+  }],
+  "permissions": ["http://*.epguides.com/", "https://*.epguides.com/"]
+}
