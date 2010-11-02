@@ -17,7 +17,7 @@
   $("hr").remove();
   $(".recap").remove();
   $(".Trailers").remove();
-  $('#header').replaceWith("<h1>"+$("h1").html()+"</h1>");
+  $('#header').replaceWith("<h1><span id='serial'>"+$("h1").html()+"</span><button id='removeJunk' href='javascript:void(0);'>Show as list of names</button></h1>");
   $('a').each(function(i, e) {
     $(e).replaceWith($(e).html());
   });
@@ -29,7 +29,7 @@
     "The Office (US)": "The Office"
   };
 
-  var seriesTitle = seriesTitleChangeMap[$("h1").html()]?seriesTitleChangeMap[$("h1").html()]:$("h1").html();
+  var seriesTitle = seriesTitleChangeMap[$("#serial").html()]?seriesTitleChangeMap[$("#serial").html()]:$("#serial").html();
   
   var rows = $("pre").html().split("\n");
   var newPre = "";
@@ -42,8 +42,8 @@
       r += "                                                                     ";
       r = r.replace("&amp;", "&");
       var name = seriesTitle + episodeNo + episodeTitle;
-      r = r.substr(0,57) +  "\t<span class='copy'>" + name + "</span>";
-      newPre += "<div style='padding:5px 0;'>"+r + "</div>";
+      r = "<span class='junk'>" + r.substr(0,57) +  "\t</span><span><span class='copy'>" + name + "</span></span>";
+      newPre += "<div style='padding:5px 0;'>" + r + "</div>";
     } else if (r[0] === "•") {
       newPre += "</div><div class='season'><div style='padding:5px 0;'>"+ r + "</div>";
       
@@ -78,6 +78,11 @@
     } else if ($(event.target).hasClass("copyInput")) {
       event.target.select();
     }
+  });
+
+  $("#removeJunk").click(function(event) {
+    event.preventDefault();
+    $(".junk").remove();
   });
   
 }) ();

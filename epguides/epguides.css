@@ -1,3 +1,5 @@
-.copy{padding-left:30px; color: black; text-decoration: none;}
-.copyInput{padding-left:30px; width: 600px; border: 0px; font-family: monospace; white-space: pre; padding: 0px; margin: 0px;}
+.copy{color: black; text-decoration: none;}
+.copyInput{ width: 600px; border: 0px; font-family: monospace; white-space: pre; padding: 0px; margin: 0px;}
 .copyInput:focus{outline: none; padding: 0px; outline-offset: 0px;}
+.junk{margin-right: 30px;}
+#removeJunk{margin: 4px 0px 0px 100px; vertical-align: top;}
