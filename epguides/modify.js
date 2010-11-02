@@ -41,13 +41,14 @@
       episodeTitle = episodeTitle[episodeTitle.length-1].trim();
       r += "                                                                     ";
       r = r.replace("&amp;", "&");
-      r = r.substr(0,57) +  "\t" + seriesTitle + episodeNo + episodeTitle;
+      var name = seriesTitle + episodeNo + episodeTitle;
+      r = r.substr(0,57) +  "\t<span class='copy'>" + name + "</span>";
       newPre += "<div style='padding:5px 0;'>"+r + "</div>";
     } else if (r[0] === "•") {
-      newPre += "</div><div class='season'><div style='padding:5px 0;'>"+r + "</div>";
+      newPre += "</div><div class='season'><div style='padding:5px 0;'>"+ r + "</div>";
       
     } else if (r.substr(0,5) === "Other") {
-      newPre += "</div><div class='other'><div style='padding:5px 0;'>"+r + "</div>";
+      newPre += "</div><div class='other'><div style='padding:5px 0;'>"+ r + "</div>";
     } else {
       newPre += "<div style='padding:5px 0;'>"+r + "</div>";
     }
@@ -66,5 +67,17 @@
   $(".other").remove();
 
   $("pre").html(reversedList + other);
+
+  $(document.body).click(function(event) {
+    if($(event.target).hasClass("copy")) {
+      var text = $(event.target).html();
+      var parent = $(event.target).parent();
+      $(event.target).replaceWith("<input class='copyInput'  type='text' />");
+      parent.children() [0].value = text;
+      parent.children() [0].select();
+    } else if ($(event.target).hasClass("copyInput")) {
+      event.target.select();
+    }
+  });
   
 }) ();

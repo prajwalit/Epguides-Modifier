@@ -4,7 +4,8 @@
   "description": "Clipboard trial",
   "content_scripts": [{	
     "matches": ["http://*.epguides.com/*", "https://*.epguides.com/*"],
-    "js": ["jquery.js", "modify.js"]
+    "js": ["jquery.js", "modify.js"],
+    "css": ["epguides.css"]
   }],
   "permissions": ["http://*.epguides.com/", "https://*.epguides.com/"]
 }
