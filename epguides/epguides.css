@@ -2,4 +2,4 @@
 .copyInput{ width: 600px; border: 0px; font-family: monospace; white-space: pre; padding: 0px; margin: 0px;}
 .copyInput:focus{outline: none; padding: 0px; outline-offset: 0px;}
 .junk{margin-right: 30px;}
-#removeJunk{margin: 4px 0px 0px 100px; vertical-align: top;}
+#removeJunk{margin: 2px 0px 0px 100px; vertical-align: top;}
