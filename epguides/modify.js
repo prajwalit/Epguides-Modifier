@@ -25,7 +25,6 @@
   var seriesTitleChangeMap = {
     "House, M.D.": "House MD",
     "How I Met Your Mother": "HIMYM",
-    "The Big Bang Theory": "Big Bang Theory",
     "The Office (US)": "The Office"
   };
 
