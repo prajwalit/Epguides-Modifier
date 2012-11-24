@@ -1,8 +1,9 @@
 {
   "name": "Modifies Epguides pages",
   "version": "1.0",
+  "manifest_version": 2,
   "description": "Removes the crap. Reverses the order of seasons. Formats episode names.",
-  "content_scripts": [{	
+  "content_scripts": [{
     "matches": ["http://*.epguides.com/*", "https://*.epguides.com/*"],
     "js": ["jquery.js", "modify.js"],
     "css": ["epguides.css"]
